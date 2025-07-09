@@ -5,7 +5,7 @@ services:
     image: postgres:13
     container_name: postgres-jobportal
     ports:
-      - "4002:5432"
+      - "5607:5432"
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: admin123
@@ -21,9 +21,9 @@ services:
       dockerfile: Dockerfile
     container_name: backend-jobportal
     ports:
-      - "4010:4010"
+      - "3607:3607"
     environment:
-      PORT: 4010
+      PORT: 3607
       DB_USER: postgres
       DB_PASSWORD: admin123
       DB_HOST: postgres
@@ -40,7 +40,7 @@ services:
       dockerfile: Dockerfile
     container_name: browsing-jobs
     ports:
-      - "5012:80"
+      - "8011:80"
     networks:
       - jobportal-network
 
@@ -50,7 +50,7 @@ services:
       dockerfile: Dockerfile
     container_name: hr-side-posting
     ports:
-      - "5013:80"
+      - "8012:80"
     networks:
       - jobportal-network
 
